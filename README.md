@@ -7,12 +7,17 @@ Business Analysis project modeling AS-IS and TO-BE processes, defining requireme
 ## Author
 Henrique Santos da Silva  
 Date: February/2026  
-Version: 1.0  
+Version: 1.1  
 
 ---
 
 ## Introduction
 This project presents a Business Analysis case for a Service Management System (SGOS), aiming to optimize operational processes, reduce rework and improve efficiency through structured workflow modeling and SLA monitoring.
+
+---
+
+## Problem Statement
+The current service order process lacks SLA control, structured prioritization and proper execution records, leading to operational inefficiencies and lack of performance visibility.
 
 ---
 
@@ -62,7 +67,17 @@ Develop a structured service order management process including automatic priori
 
 ---
 
-## Processes
+## Priority Matrix
+
+| Priority | Description | SLA |
+|----------|------------|-----|
+| High | Critical equipment failure | 4 hours |
+| Medium | Operational impact | 8 hours |
+| Low | Non-critical issue | 24 hours |
+
+---
+
+## Process Modeling
 
 ### AS-IS – Current Process
 
