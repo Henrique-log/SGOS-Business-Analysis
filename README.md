@@ -137,3 +137,5 @@ subgraph TO-BE [TO-BE – Proposed Process]
     K2 --> L2([End])
 end
 ```
+
+This case was developed as part of my Business Analysis portfolio to demonstrate process modeling, requirement definition, and governance-oriented thinking.
