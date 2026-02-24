@@ -6,22 +6,25 @@ Business Analysis project modeling AS-IS and TO-BE processes, defining requireme
 
 ## Author
 Henrique Santos da Silva  
-Date: February/2026  
-Version: 1.1  
+**Date:** February/2026  
+**Version:** 2.0  
 
 ---
 
 ## Introduction
+
 This project presents a Business Analysis case for a Service Management System (SGOS), aiming to optimize operational processes, reduce rework and improve efficiency through structured workflow modeling and SLA monitoring.
 
 ---
 
 ## Problem Statement
-The current service order process lacks SLA control, structured prioritization and proper execution records, leading to operational inefficiencies and lack of performance visibility.
+
+The current service order process lacks SLA control, structured prioritization and proper execution records, leading to operational inefficiencies, inconsistent prioritization and limited performance visibility for management.
 
 ---
 
 ## Stakeholders
+
 - **Maintenance Technicians** – execution and operational activities  
 - **Supervisor** – task distribution and SLA control  
 - **Operational Manager** – cost reduction and performance monitoring  
@@ -31,13 +34,15 @@ The current service order process lacks SLA control, structured prioritization a
 ---
 
 ## Objective
-Develop a structured service order management process including automatic prioritization, SLA monitoring and a management dashboard with key performance indicators (KPIs).
+
+Develop a structured service order management process including automatic prioritization, SLA monitoring and a management dashboard with key performance indicators (KPIs), ensuring governance and operational transparency.
 
 ---
 
 ## Scope
 
 ### In Scope
+
 - Equipment registration  
 - Service order creation  
 - Automatic priority classification  
@@ -46,24 +51,29 @@ Develop a structured service order management process including automatic priori
 - Management dashboard  
 
 ### Out of Scope
+
 - ERP integration  
 - Inventory management module  
 
 ---
 
 ## Functional Requirements
+
 - Equipment registration module  
 - Service order creation  
 - Mandatory execution logging  
 - Automatic priority classification  
 - Management dashboard with KPIs  
+- Automated SLA breach notifications  
 
 ---
 
 ## Business Rules
+
 - Critical service orders must be handled within 4 hours (SLA)  
 - Delayed service orders must trigger automatic notifications  
 - Service orders cannot be closed without complete execution records  
+- Priority must be automatically assigned based on equipment criticality  
 
 ---
 
@@ -71,9 +81,9 @@ Develop a structured service order management process including automatic priori
 
 | Priority | Description | SLA |
 |----------|------------|-----|
-| High | Critical equipment failure | 4 hours |
-| Medium | Operational impact | 8 hours |
-| Low | Non-critical issue | 24 hours |
+| High     | Critical equipment failure | 4 hours |
+| Medium   | Operational impact | 8 hours |
+| Low      | Non-critical issue | 24 hours |
 
 ---
 
