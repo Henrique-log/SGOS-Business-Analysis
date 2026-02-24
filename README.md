@@ -85,9 +85,9 @@ Develop a structured service order management process including automatic priori
 
 ---
 
-## Process Modeling
+# Process Modeling
 
-### AS-IS – Current Process
+## AS-IS – Current Process
 
 ```mermaid
 flowchart TD
@@ -106,28 +106,11 @@ flowchart TD
     I --> J[No SLA monitoring]
     J --> K([End])
 
-TO-BE – Proposed Process (Solution)
+
+## TO-BE – Proposed Process (Solution)
+
 The following TO-BE process was designed to mitigate the gaps identified above, introducing automation, real-time monitoring, and data integrity.
 
+```mermaid
 flowchart TD
-    A([Start]) --> B[Equipment failure identified]
-    B --> C[Technician opens Service Order in SGOS Mobile/Web]
-    C --> D[System automatically assigns priority based on Asset Criticality]
-    D --> E{Is it High Priority?}
-
-    E -- Yes --> F[Immediate alert to Supervisor & Available Technician]
-    E -- No --> G[Added to standard execution queue]
-
-    F --> H[Maintenance execution with real-time logging]
-    G --> H
-
-    H --> I{Check: All mandatory fields filled?}
-    I -- No --> H
-    I -- Yes --> J[Close Service Order & Stop SLA Timer]
-    
-    J --> K[Update Management Dashboard - KPIs]
-    K --> L([End])
-
-    style D fill:#f9f,stroke:#333,stroke-width:2px
-    style J fill:#bbf,stroke:#333,stroke-width:2px
-    style K fill:#dfd,stroke:#333,stroke-width:2px
+...
