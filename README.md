@@ -1,51 +1,84 @@
-# SGOS-Business-Analysis
+# SGOS – Business Analysis Case
+
 Business Analysis project modeling AS-IS and TO-BE processes, defining requirements, business rules and KPIs for a Service Management System.
-
-# Business Analysis Case – Sistema de Gestão de Ordens de Serviço (SGOS)
-
-## Autor
-Henrique Santos da Silva  
-Data: Fevereiro/2026  
-Versão: 1.0  
 
 ---
 
-## Introdução
-O projeto apresenta uma análise de negócio para o Sistema de Gestão de Ordens de Serviço (SGOS), com objetivo de otimizar processos, reduzir retrabalho e melhorar a eficiência operacional.
+## Author
+Henrique Santos da Silva  
+Date: February/2026  
+Version: 1.0  
+
+---
+
+## Introduction
+This project presents a Business Analysis case for a Service Management System (SGOS), aiming to optimize operational processes, reduce rework and improve efficiency through structured workflow modeling and SLA monitoring.
 
 ---
 
 ## Stakeholders
-- **Técnicos de Manutenção:** execução e organização  
-- **Supervisor:** distribuição e controle de SLA  
-- **Gerente Operacional:** redução de custos  
-- **Diretoria:** indicadores consolidados  
-- **Equipe de TI:** implantação e viabilidade técnica  
+- **Maintenance Technicians** – execution and operational activities  
+- **Supervisor** – task distribution and SLA control  
+- **Operational Manager** – cost reduction and performance monitoring  
+- **Board of Directors** – strategic indicators and decision-making support  
+- **IT Team** – system implementation and technical feasibility  
 
 ---
 
-## Objetivo
-Desenvolver um processo estruturado para controle de ordens de serviço, priorização automática e monitoramento de SLA, com dashboard gerencial de KPIs.
+## Objective
+Develop a structured service order management process including automatic prioritization, SLA monitoring and a management dashboard with key performance indicators (KPIs).
 
 ---
 
-## Processos
+## Scope
 
-### AS IS – Processo Atual
+### In Scope
+- Equipment registration  
+- Service order creation  
+- Automatic priority classification  
+- Mandatory execution record  
+- SLA monitoring  
+- Management dashboard  
+
+### Out of Scope
+- ERP integration  
+- Inventory management module  
+
+---
+
+## Functional Requirements
+- Equipment registration module  
+- Service order creation  
+- Mandatory execution logging  
+- Automatic priority classification  
+- Management dashboard with KPIs  
+
+---
+
+## Business Rules
+- Critical service orders must be handled within 4 hours (SLA)  
+- Delayed service orders must trigger automatic notifications  
+- Service orders cannot be closed without complete execution records  
+
+---
+
+## Processes
+
+### AS-IS – Current Process
 
 ```mermaid
 flowchart TD
-A([Início]) --> B[Equipamento apresenta falha]
-B --> C[Técnico comunica supervisor verbalmente]
-C --> D[Supervisor registra em planilha manual]
-D --> E{Equipamento é crítico?}
+A([Start]) --> B[Equipment failure identified]
+B --> C[Technician informs supervisor verbally]
+C --> D[Supervisor registers request manually in spreadsheet]
+D --> E{Is the equipment critical?}
 
-E -- Sim --> F[Definir prioridade alta manualmente]
-E -- Não --> G[Definir prioridade normal]
+E -- Yes --> F[Define high priority manually]
+E -- No --> G[Define normal priority]
 
-F --> H[Execução da manutenção]
+F --> H[Maintenance execution]
 G --> H
 
-H --> I[Registro incompleto ou tardio]
-I --> J[Sem controle de SLA]
-J --> K([Fim])
+H --> I[Incomplete or delayed record]
+I --> J[No SLA monitoring]
+J --> K([End])
