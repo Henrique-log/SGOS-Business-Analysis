@@ -87,30 +87,53 @@ Develop a structured service order management process including automatic priori
 
 # Process Modeling
 
-## AS-IS – Current Process
+## Process Modeling – AS-IS and TO-BE
 
 ```mermaid
-flowchart TD
-    A([Start]) --> B[Equipment failure identified]
-    B --> C[Technician informs supervisor verbally]
-    C --> D[Supervisor registers request manually in spreadsheet]
-    D --> E{Is the equipment critical?}
+flowchart LR
 
-    E -- Yes --> F[Define high priority manually]
-    E -- No --> G[Define normal priority]
+%% =========================
+%% AS-IS PROCESS
+%% =========================
 
-    F --> H[Maintenance execution]
-    G --> H
+subgraph AS-IS [AS-IS – Current Process]
+    A1([Start]) --> B1[Equipment failure identified]
+    B1 --> C1[Technician informs supervisor verbally]
+    C1 --> D1[Supervisor registers request manually in spreadsheet]
+    D1 --> E1{Is the equipment critical?}
 
-    H --> I[Incomplete or delayed record]
-    I --> J[No SLA monitoring]
-    J --> K([End])
+    E1 -- Yes --> F1[Define high priority manually]
+    E1 -- No --> G1[Define normal priority]
 
+    F1 --> H1[Maintenance execution]
+    G1 --> H1
 
-## TO-BE – Proposed Process (Solution)
+    H1 --> I1[Incomplete or delayed record]
+    I1 --> J1[No SLA monitoring]
+    J1 --> K1([End])
+end
 
-The following TO-BE process was designed to mitigate the gaps identified above, introducing automation, real-time monitoring, and data integrity.
+%% =========================
+%% TO-BE PROCESS
+%% =========================
 
-```mermaid
-flowchart TD
-...
+subgraph TO-BE [TO-BE – Proposed Process]
+    A2([Start]) --> B2[Equipment failure identified]
+    B2 --> C2[Technician opens Service Order in SGOS Mobile/Web]
+    C2 --> D2[System automatically assigns priority based on Asset Criticality]
+    D2 --> E2{Is it High Priority?}
+
+    E2 -- Yes --> F2[Immediate alert to Supervisor and Available Technician]
+    E2 -- No --> G2[Added to standard execution queue]
+
+    F2 --> H2[Maintenance execution with real-time logging]
+    G2 --> H2
+
+    H2 --> I2{All mandatory fields filled?}
+    I2 -- No --> H2
+    I2 -- Yes --> J2[Close Service Order and Stop SLA Timer]
+
+    J2 --> K2[Update Management Dashboard with KPIs]
+    K2 --> L2([End])
+end
+```
